@@ -16,6 +16,7 @@ const labels = [
 ]
 
 
+
 // export const toyService = {
 //   query,
 //   getById,
@@ -26,6 +27,7 @@ const labels = [
 //   getDefaultSort,
 //   getToyLabels,
 // }
+
 
 function query(filterBy = {}, sortBy, pageIdx) {
   return httpService.get(BASE_URL, { filterBy, sortBy, pageIdx })
