@@ -5,7 +5,7 @@ import './App.css'
 import './index.css'
 
 
-function App() {
+export function ToyIndex() {
   const [count, setCount] = useState(0)
 
   return (
@@ -15,4 +15,3 @@ function App() {
   )
 }
 
-export default App
