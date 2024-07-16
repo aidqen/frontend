@@ -19,12 +19,13 @@ export const toyService = {
 }
 
 function query() {
-  storageService.query(STORAGE_KEY).then((toys) => {
+  return storageService.query(STORAGE_KEY).then((toys) => {
     if (!toys || !toys.length) {
       const createdToys = createToys()
       storageService.save(STORAGE_KEY, createdToys)
-      console.log(createToys);
+      return createdToys
     }
+    return toys
   })
 }
 

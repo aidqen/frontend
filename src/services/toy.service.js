@@ -16,16 +16,16 @@ const labels = [
 ]
 
 
-export const toyService = {
-  query,
-  getById,
-  save,
-  remove,
-  getEmptyToy,
-  getDefaultFilter,
-  getDefaultSort,
-  getToyLabels,
-}
+// export const toyService = {
+//   query,
+//   getById,
+//   save,
+//   remove,
+//   getEmptyToy,
+//   getDefaultFilter,
+//   getDefaultSort,
+//   getToyLabels,
+// }
 
 function query(filterBy = {}, sortBy, pageIdx) {
   return httpService.get(BASE_URL, { filterBy, sortBy, pageIdx })
