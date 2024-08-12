@@ -10,9 +10,8 @@ export const utilService = {
     getRandomTimestamp,
     getRandomColor,
     getTimeOfSent,
-    generateRandomSubject
-  
-  
+    generateRandomSubject,
+    generateToyName
   }
   function makeId(length = 6) {
     var txt = ''
@@ -211,6 +210,20 @@ export const utilService = {
   
     return subject
   }
+
+  function generateToyName() {
+    const adjectives = ['Magic', 'Super', 'Mystery', 'Wonder', 'Mega'];
+    const colors = ['Red', 'Blue', 'Green', 'Yellow', 'Purple'];
+    const toys = ['Robot', 'Racer', 'Doll', 'Spaceship', 'Castle'];
+  
+    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomToy = toys[Math.floor(Math.random() * toys.length)];
+  
+    return `${randomAdjective} ${randomColor} ${randomToy}`;
+  }
+  
+
   
   function generateRandomEmailSender() {
     const names = ['john', 'jane', 'alex', 'chris', 'pat', 'taylor', 'jordan', 'casey', 'jamie', 'morgan', 'momo', 'sam', 'kim', 'lee', 'kelly']

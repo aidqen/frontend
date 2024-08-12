@@ -15,12 +15,14 @@ function query(entityType, delay = 700) {
 }
 
 function get(entityType, entityId) {
+  console.log('hi')
   return query(entityType).then(entities => {
     const entity = entities.find(entity => entity._id === entityId)
     if (!entity)
       throw new Error(
         `Get failed, cannot find entity with id: ${entityId} in: ${entityType}`
       )
+      console.log(entity);
     return entity
   })
 }

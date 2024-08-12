@@ -1,0 +1,53 @@
+.toy-details-container {
+    /* place center using position absolute */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 3em;
+    border-radius: 1em;
+    border: 1px solid lightgray;
+    width: 50em;
+    margin-top: 20px;
+}
+
+.toy-details-container .labels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    gap: 1em;
+    width: 100%;
+}
+
+.toy-details-container .labels span {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0, 195, 255), rgb(58, 61, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border: 1px solid #32a3ff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    height: minmax(3em, 1fr);
+    width: 10em;
+    white-space: nowrap;
+}
+
+.toy-details-container button {
+    background: linear-gradient(to right, rgb(0, 195, 255), rgb(58, 61, 255));
+    color: white;
+    border: 1px solid #32a3ff;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 5px;
+    margin-top: 1em;
+    cursor: pointer;
+}

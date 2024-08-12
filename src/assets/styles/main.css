@@ -1,3 +1,6 @@
+@import './general/AppHeader.css';
+@import './general/helpers.css';
+@import './general/layout.css';
 @import './general/ToyDetails.css';
 @import './general/ToyEdit.css';
 @import './general/ToyIndex.css';

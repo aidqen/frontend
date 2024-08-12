@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Toy 1",
+        "price": 100,
+        "labels": [
+            "On wheels",
+            "Box game",
+            "Art"
+        ],
+        "createdAt": "1625364729",
+        "inStock": false
+    },
+    {
+        "name": "Toy 2",
+        "price": 172,
+        "labels": [
+            "Art",
+            "Baby",
+            "Doll"
+        ],
+        "createdAt": "1625984920",
+        "inStock": true
+    },
+    {
+        "name": "Toy 3",
+        "price": 142,
+        "labels": [
+            "Doll",
+            "Puzzle"
+        ],
+        "createdAt": "1630293458",
+        "inStock": true
+    }
+]

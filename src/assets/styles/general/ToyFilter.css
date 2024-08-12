@@ -1,0 +1,30 @@
+.toy-filter > * {
+    margin-block: 0.5em;
+    gap: 1em;
+}
+
+.toy-filter input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.toy-filter .sort-by {
+    display: flex;
+    gap: 1em;
+}
+
+.toy-filter .sort-by select {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.toy-filter .sort-by select option {
+    color: rgb(82, 82, 82);
+}
+
+
+
+

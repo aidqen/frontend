@@ -1,0 +1,113 @@
+ul.toy-list li {
+  border-radius: 1em;
+  border: 1px solid #32a3ff;
+  padding: 1.5em;
+  box-shadow: 0 0 8px #32a3ff48;
+  max-width: 20em;
+  transition: 0.2s;
+  cursor: pointer;
+}
+ul.toy-list li:hover {
+  background: lightgray;
+}
+
+ul.toy-list li h2 {
+    background: linear-gradient(to right, rgb(0, 195, 255), rgb(58, 61, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
+    text-shadow: 0 0 4px #32a3ff48, 0 0 4px #32a3ff44, 0 0 4px #32a3ff36;
+    
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+
+ul.toy-list li .labels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    align-content: start;
+    height: 3em;
+    gap: 0.5em;
+
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #92ceff #f5f5f5;
+    scroll-behavior: smooth;
+}
+
+ul.toy-list li .labels>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 217, 255);
+    background-color: rgba(0, 217, 255, 0.11);
+    border-radius: 8px;
+    padding: 0.3em;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    height: 3em;
+    min-width: 100%;
+    max-width: 8em;
+    font-size: 0.8em;
+    margin-right: 0.5em;
+}
+
+.in-stock {
+    color: #fff; 
+    background-color: #28a745; 
+    border: 1px solid #218838;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    display: inline-block; 
+    text-align: center; 
+  }
+
+  .out-of-stock {
+    color: #fff; 
+    background-color: #dc3545; 
+    border: 1px solid #c82333; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+    font-weight: bold; 
+    display: inline-block; 
+    text-align: center; 
+  }
+
+  .price {
+    font-size: 18px; 
+    color: #333; 
+    margin: 10px 0; 
+  }
+  
+  /* Specific styling for the span inside the .price paragraph */
+  .price span {
+    font-weight: bold; /* Make the price bold */
+    color: #007bff; /* A distinct blue color to make the price stand out */
+    background-color: #e9ecef; /* Light grey background to highlight the price */
+    padding: 3px 8px; /* Padding around the price for better visibility */
+    border-radius: 5px; /* Rounded corners for the highlighted background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to make it pop out */
+  }
+
+/* General styling for the paragraph that includes the date */
+.created-at {
+  font-size: 16px; /* Appropriate font size for readability */
+  color: #444; /* A neutral color for the non-date text */
+  margin-top: 10px; /* Spacing from the element above */
+  display: block; /* Ensures it's on a new line, adjust as needed */
+}
+
+/* Specific styling for the date inside the span */
+.created-at span {
+  font-weight: bold; /* Bold for emphasis */
+  color: #001020; /* A distinct blue to highlight the date */
+  /* background-color: #eef2f7;  */
+  padding: 2px 6px; /* Padding to make the background noticeable */
+  border-radius: 4px; /* Rounded corners for a soft, modern look */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+/* Hover effect for interactivity, if desired */

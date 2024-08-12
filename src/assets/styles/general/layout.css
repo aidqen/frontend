@@ -1,0 +1,12 @@
+main {
+    margin: 2em;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a.active {
+    color: black;
+    text-decoration: none;
+}

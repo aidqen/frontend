@@ -15,22 +15,22 @@ const labels = [
   'Battery Powered',
 ]
 
+export const toyService = {
+  query,
+    getById,
+    save,
+    remove,
+    getEmptyToy,
+    getDefaultFilter,
+    getDefaultSort,
+    getToyLabels,
+}
 
 
-// export const toyService = {
-//   query,
-//   getById,
-//   save,
-//   remove,
-//   getEmptyToy,
-//   getDefaultFilter,
-//   getDefaultSort,
-//   getToyLabels,
-// }
+function query(filterBy = {}) {
 
-
-function query(filterBy = {}, sortBy, pageIdx) {
-  return httpService.get(BASE_URL, { filterBy, sortBy, pageIdx })
+  return httpService.get(BASE_URL, filterBy)
+  // return httpService.get(BASE_URL, { filterBy, sortBy, pageIdx })
 }
 
 function getById(toyId) {
@@ -41,6 +41,10 @@ function remove(toyId) {
   return httpService.delete(BASE_URL + toyId)
 }
 
+function addToy(toyToAdd) {
+  return httpService.post(BASE_URL, toyToAdd)
+}
+
 function save(toy) {
   const method = toy._id ? 'put' : 'post'
   return httpService[method](BASE_URL, toy)
@@ -48,10 +52,12 @@ function save(toy) {
 
 function getDefaultFilter() {
   return {
-    txt: '',
-    inStock: null,
+    name: '',
+    minPrice: 0,
+    inStock: false,
     labels: [],
-    pageIdx: 0,
+    sortBy: 'date',
+    sortByDir: '1',
   }
 }
 
