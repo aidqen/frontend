@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box,Button,Divider,Drawer,List,ListItem,ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, NavLink, useNavigate } from 'react-router-dom'
@@ -11,7 +10,8 @@ export function AppHeader() {
   }
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    <>
+    {/* <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}> */}
       <List>
        
           <ListItem key={'home'} disablePadding>
@@ -24,7 +24,7 @@ export function AppHeader() {
               <ListItemText primary={'Toys'} />
             </ListItemButton>
           </ListItem>
-          <ListItem key={'login'} disablePadding>
+          {/* <ListItem key={'login'} disablePadding>
             <ListItemButton onClick={() => navigate('/auth/login')}>
               <ListItemText primary={'Login'} />
             </ListItemButton>
@@ -33,11 +33,12 @@ export function AppHeader() {
             <ListItemButton onClick={() => navigate('/auth/signup')}>
               <ListItemText primary={'Signup'} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
        
       </List>
       <Divider />
-    </Box>
+     {/* </Box> */}
+    </>
   )
 
   return (

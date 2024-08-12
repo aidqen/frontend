@@ -1,4 +1,12 @@
+import { useEffect, useState } from "react"
+
 export function LoginSignup() {
+    // const [authMode, setAuthMode] = useState('login')
+
+    // useEffect(() => {
+      
+    // }, [third])
+    
   return (
     <div className="login-signup-container">
       <h1>Login / Signup</h1>
