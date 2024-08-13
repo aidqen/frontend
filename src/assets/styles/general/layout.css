@@ -1,3 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+label {
+    font-weight: 600;
+}
+
 main {
     margin: 2em;
 }

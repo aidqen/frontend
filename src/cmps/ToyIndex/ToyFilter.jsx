@@ -1,8 +1,6 @@
-import { SelectCmp } from '../SelectCmp'
-import { MinPriceFilter } from './MinPriceFilter'
+// import { SelectCmp } from '../SelectCmp'
 
 export function ToyFilter({ setFilterBy, filterBy, labels }) {
-
   const { sortBy, sortByDir, name, inStock } = filterBy
 
   function handleChange({ target }) {
@@ -23,18 +21,12 @@ export function ToyFilter({ setFilterBy, filterBy, labels }) {
         <input
           type="text"
           name="name"
-          placeholder="Search"
+          placeholder="Search toys..."
           value={name}
           onChange={handleChange}
         />
-        <MinPriceFilter filterBy={filterBy} setFilterBy={setFilterBy} />
       </div>
       <div className="filters-section-2 flex flex-row align-center">
-        <SelectCmp
-          labels={labels}
-          filterBy={filterBy}
-          setFilterBy={handleChange}
-        />
         <label>
           In Stock
           <input
@@ -45,21 +37,19 @@ export function ToyFilter({ setFilterBy, filterBy, labels }) {
           />
         </label>
       </div>
-      <div className="sort-by">
-        <label>
-          Sort By:
-          <select name="sortBy" value={sortBy} onChange={handleChange}>
-            <option value="date">Date</option>
-            <option value="name">Name</option>
-            <option value="price">Price</option>
-            <option value="inStock">In Stock</option>
-          </select>
-        </label>
+      <div className="sort-by flex flex-row align-center">
+        <label>Sort By:</label>
+        <select name="sortBy" value={sortBy} onChange={handleChange}>
+          <option value="date">Date</option>
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+          <option value="inStock">In Stock</option>
+        </select>
 
-          <select name="sortByDir" value={sortByDir} onChange={handleChange}>
-            <option value="1">Ascending</option>
-            <option value="-1">Descending</option>
-          </select>
+        <select name="sortByDir" value={sortByDir} onChange={handleChange}>
+          <option value="1">Ascending</option>
+          <option value="-1">Descending</option>
+        </select>
       </div>
     </section>
   )

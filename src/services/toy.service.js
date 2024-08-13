@@ -5,30 +5,29 @@ const BASE_URL = 'toy/'
 const STORAGE_KEY = 'toyDB'
 
 const labels = [
-  'On wheels',
-  'Box game',
-  'Art',
-  'Baby',
-  'Doll',
-  'Puzzle',
-  'Outdoor',
-  'Battery Powered',
+  'on wheels',
+  'box game',
+  'art',
+  'baby',
+  'doll',
+  'puzzle',
+  'outdoor',
+  'battery Powered',
 ]
 
 export const toyService = {
   query,
-    getById,
-    save,
-    remove,
-    getEmptyToy,
-    getDefaultFilter,
-    getDefaultSort,
-    getToyLabels,
+  getById,
+  save,
+  remove,
+  getEmptyToy,
+  getDefaultFilter,
+  getDefaultSort,
+  getToyLabels,
+  addToy,
 }
 
-
 function query(filterBy = {}) {
-
   return httpService.get(BASE_URL, filterBy)
   // return httpService.get(BASE_URL, { filterBy, sortBy, pageIdx })
 }
@@ -47,7 +46,12 @@ function addToy(toyToAdd) {
 
 function save(toy) {
   const method = toy._id ? 'put' : 'post'
-  return httpService[method](BASE_URL, toy)
+  switch (method) {
+    case 'put':
+      return httpService[method](BASE_URL + toy._id, toy)
+    case 'post':
+      return httpService[method](BASE_URL, toy)
+  }
 }
 
 function getDefaultFilter() {

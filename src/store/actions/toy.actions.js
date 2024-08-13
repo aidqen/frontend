@@ -1,5 +1,5 @@
 import { toyService } from '../../services/toy.service'
-import { SET_LOADING } from '../reducers/toy.reducer'
+import { ADD_TOY, SET_LOADING, UPDATE_TOY } from '../reducers/toy.reducer'
 
 export async function loadToys() {
   gStore.dispatch({ type: SET_LOADING, isLoading: true })
@@ -16,3 +16,11 @@ export function getMaxToyPrice() {
   }, 0)
   return maxPrice
 }
+export async function saveToy(toy) {
+  let type = toy._id ? UPDATE_TOY : ADD_TOY
+  const toyToSave = await toyService.save(toy)
+  gStore.dispatch({ type, toyToSave })
+}
+
+
+

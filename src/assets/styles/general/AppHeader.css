@@ -1,3 +1,18 @@
-.MuiListItem-root a {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+header.app-header {
+    padding-block: 1em;
+    justify-content: center;
+    width: 95vw;
+    gap: 2rem;
+}
+
+.app-header a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    color: rgb(83, 123, 198);
+}
+
+.app-header a.active {
+    font-weight: bold;
+    color: rgb(62, 108, 194);
 }

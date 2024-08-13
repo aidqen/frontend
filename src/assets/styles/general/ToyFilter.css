@@ -1,4 +1,4 @@
-.toy-filter > * {
+.toy-filter>* {
     margin-block: 0.5em;
     gap: 1em;
 }
@@ -6,8 +6,13 @@
 .toy-filter input[type="text"] {
     width: 100%;
     padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    color: rgb(83, 123, 198);
+    border: 1px solid rgb(83, 123, 198);
+    border-radius: 0.8em;
+}
+
+.toy-filter input[type="text"]::placeholder {
+    color: rgb(83, 123, 198);
 }
 
 .toy-filter .sort-by {
@@ -15,9 +20,19 @@
     gap: 1em;
 }
 
+.toy-list-header h1 {
+    color: rgb(83, 123, 198);
+
+}
+
+.toy-filter label {
+    font-weight: 600;
+    color: rgb(83, 123, 198);
+}
+
 .toy-filter .sort-by select {
     padding: 0.5em;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(83, 123, 198);
     border-radius: 5px;
 }
 
@@ -25,6 +40,11 @@
     color: rgb(82, 82, 82);
 }
 
+.toy-list-header {
+    width: max-content;
+    padding-inline: 3rem;
+}
 
+.add-toy-btn {
 
-
+}

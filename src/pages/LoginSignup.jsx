@@ -1,23 +1,78 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom/dist'
+import { userService } from '../services/user.service'
+import { useDispatch } from 'react-redux'
 
 export function LoginSignup() {
-    // const [authMode, setAuthMode] = useState('login')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const [authDetails, setAuthDetails] = useState({
+    username: '',
+    password: '',
+    fullname: '',
+  })
+  const { username, password, fullname } = authDetails
 
-    // useEffect(() => {
-      
-    // }, [third])
-    
+  const isLogin = pathname.includes('login')
+
+
+  function handleChange({ target }) {
+    const { name, value } = target
+    setAuthDetails({ ...authDetails, [name]: value })
+  }
+
+  function switchAuthModes(e) {
+    e.preventDefault()
+
+    const newPathname = isLogin
+      ? pathname.replace('login', 'signup')
+      : pathname.replace('signup', 'login')
+    navigate(newPathname)
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const user = await isLogin ? userService.login(authDetails) : userService.signup(authDetails)
+    dispatch({ type: 'SET_USER', user })
+  }
+
   return (
     <div className="login-signup-container">
-      <h1>Login / Signup</h1>
-      <form className="flex flex-column">
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
-        <label htmlFor="fullName">Full Name:</label>
-        <input type="text" id="fullName" name="fullName" />
-        <button type="submit">Submit</button>
+      <div className="headers flex flex-row align-center">
+        <h1>{isLogin ? 'Login' : 'Signup'}</h1>
+        
+      </div>
+      <form onSubmit={handleSubmit} className="flex flex-column">
+        <input
+          type="text"
+          name="username"
+          placeholder="Name..."
+          value={username}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password..."
+          value={password}
+          onChange={handleChange}
+        />
+        {!isLogin && (
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Fullname..."
+            value={fullname}
+            onChange={handleChange}
+          />
+        )}
+        <div className="buttons flex flex-row">
+          <button>Submit</button>
+          <button onClick={switchAuthModes}>
+            {isLogin ? 'Don\'t have an account? Signup' : 'Have an account? Login'}
+          </button>
+        </div>
       </form>
     </div>
   )

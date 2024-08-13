@@ -1,4 +1,5 @@
 ul.toy-list li {
+  z-index: 0;
   border-radius: 1em;
   border: 1px solid #32a3ff;
   padding: 1.5em;
@@ -7,6 +8,7 @@ ul.toy-list li {
   transition: 0.2s;
   cursor: pointer;
 }
+
 ul.toy-list li:hover {
   background: lightgray;
 }
@@ -24,11 +26,13 @@ ul.toy-list li h2 {
 }
 
 ul.toy-list li .labels {
+  
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     align-content: start;
     height: 3em;
     gap: 0.5em;
+    text-transform: capitalize;
 
     overflow-y: auto;
     scrollbar-width: thin;
@@ -47,9 +51,9 @@ ul.toy-list li .labels>* {
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
-    height: 3em;
-    min-width: 100%;
-    max-width: 8em;
+    height: 2.5em;
+    min-width: 3em;
+    max-width: 10em;
     font-size: 0.8em;
     margin-right: 0.5em;
 }
@@ -58,22 +62,24 @@ ul.toy-list li .labels>* {
     color: #fff; 
     background-color: #28a745; 
     border: 1px solid #218838;
-    padding: 5px 10px; 
+    padding: 5px 8px; 
     border-radius: 5px; 
     font-weight: bold; 
-    display: inline-block; 
+    display: inline-block;
     text-align: center; 
+    font-size: 0.9em;
   }
-
+  
   .out-of-stock {
     color: #fff; 
     background-color: #dc3545; 
     border: 1px solid #c82333; 
-    padding: 5px 10px; 
+    padding: 5px 8px; 
     border-radius: 5px;
     font-weight: bold; 
     display: inline-block; 
     text-align: center; 
+    font-size: 0.9em;
   }
 
   .price {
@@ -108,6 +114,25 @@ ul.toy-list li .labels>* {
   padding: 2px 6px; /* Padding to make the background noticeable */
   border-radius: 4px; /* Rounded corners for a soft, modern look */
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+:is(.update-btn, .details-btn):hover  {
+  background-color:#007bff;
+
+}
+
+.update-btn, .details-btn {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  border-radius: 1em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.preview-tags {
+  gap: 0.3em;
 }
 
 /* Hover effect for interactivity, if desired */

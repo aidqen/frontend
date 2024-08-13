@@ -1,27 +1,23 @@
 .add-toy-btn {
     margin-top: 1em;
-    width: 20em;
+    width: 10em;
     height: 3em;
     background-color: white;
-    border: 2px solid rgb(98, 195, 255);
+    border: 3px solid rgb(83, 123, 198);
+    color: rgb(70, 106, 174);
     transition: 0.2s;
     cursor: pointer;
     border-radius: 5px;
     font-weight: 600;
-    background: linear-gradient(to right, rgb(0, 195, 255), rgb(58, 61, 255));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .add-toy-btn:hover {
     color: white;
-    background: rgb(50, 204, 255);
-    border: 2px solid white;
+    background: rgb(83, 123, 198);
+    border: 3px solid rgb(83, 123, 198);
 }
 
 /** MODAL: */
-
 
 
 .modal {
@@ -39,16 +35,24 @@
 }
 
 .modal-content form {
-    gap: 0.5em;
+    gap: 1.5em;
+}
+
+.modal form label {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    font-weight: 200;
+    gap: 1em;
 }
 
 .modal-content form input {
-    width: 100%;
+    width: stretch;
     height: 2em;
-    border-radius: 0;
-    padding-inline: 1em;
+    border-radius: 7px;
+    padding-inline-start: 1em;
     padding-block: 0.2em;
-    border: 1px solid rgb(92, 212, 252);
+    border: 1px solid rgb(194, 194, 194);
     background-color:transparent;
     color: rgb(255, 255, 255);
     font-weight: 200;
@@ -57,24 +61,28 @@
 }
 
 .modal-content form button {
-    margin-top: 2em;
+    margin-top: 1em;
     background-color: lightskyblue;
     height: 3em;
+    font-weight: 600;
     border-radius: 5px;
     border: 1px solid white;
-    
+    cursor: pointer;
 }
 
 .modal .close {
     position: absolute;
     top: 5px;
     right: 5px;
-    padding-inline: 0.5em;
-    border-radius: 50%;
+    padding: 0.3em 0.5em;
+    border-radius: 10px;
     cursor: pointer;
+    border: 1px solid lightgray;
     transition: 0.1s;
     color: black;
-    background-color: rgb(155, 155, 155);
+    background-color:transparent;
+    /* background-color: rgb(155, 155, 155); */
+    font-weight: 600;
 }
 
 .modal .close:hover {

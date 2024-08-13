@@ -20,9 +20,8 @@ export function App() {
                 <Route path="/toys" element={<ToyIndex />} />
                 <Route path="/toys/:toyId" element={<ToyDetails />} />
                 <Route path="/about" element={<AboutUs />} />
-                {/* <Route path="/auth/login" element={<LoginSignup />} />
-                <Route path="/auth/signup" element={<LoginSignup />} /> */}
-                
+                <Route path="/auth/login" element={<LoginSignup />} />
+                <Route path="/auth/signup" element={<LoginSignup />} />
               </Routes>
             </main>
           </section>

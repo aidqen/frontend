@@ -8,7 +8,7 @@ const initialState = {
 export function userReducer(state = initialState, cmd) {
   switch (cmd.type) {
     case SET_USER:
-      return { ...state, toys: cmd.user }
+      return { ...state, user: cmd.user }
     default:
       return state
   }
