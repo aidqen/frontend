@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { labels, toyService } from '../services/toy.service.local'
+import { labels  } from '../services/toy/toy.service.local'
 import { saveToy, loadToys } from '../store/actions/toy.actions'
 import { ToyList } from '../cmps/ToyIndex/ToyList'
 import { ToyFilter } from '../cmps/ToyIndex/ToyFilter'

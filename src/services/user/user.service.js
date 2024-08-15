@@ -1,5 +1,5 @@
-import { storageService } from './async-storage.service.js'
-import { httpService } from './http.service.js'
+import { storageService } from '../async-storage.service.js'
+import { httpService } from '../http.service.js'
 
 // const STORAGE_KEY = 'userDB'
 const AUTH_URL = 'auth/'
@@ -60,7 +60,7 @@ function getLoggedinUser() {
 }
 
 function _setLoggedinUser(user) {
-    const userToSave = { _id: user._id, fullname: user.fullname, isAdmin: user.isAdmin }
+    const userToSave = { _id: user._id, fullname: user.fullname, isAdmin: user.isAdmin || false }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(userToSave))
     return userToSave
 }

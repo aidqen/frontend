@@ -1,5 +1,5 @@
-import { httpService } from './http.service'
-import { utilService } from './util.service'
+import { httpService } from '../http.service'
+import { utilService } from '../util.service'
 
 const BASE_URL = 'toy/'
 const STORAGE_KEY = 'toyDB'

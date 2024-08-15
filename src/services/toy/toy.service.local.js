@@ -1,5 +1,5 @@
-import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
+import { storageService } from '../async-storage.service'
+import { utilService } from '../util.service'
 import fs from 'fs'
 
 export const labels = [

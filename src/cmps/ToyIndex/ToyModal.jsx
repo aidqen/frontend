@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom/dist'
-import { toyService } from '../../services/toy.service'
+import { toyService } from '../../services/toy/toy.service'
 
 export function ToyModal({  onAddToy }) {
   const navigate = useNavigate()

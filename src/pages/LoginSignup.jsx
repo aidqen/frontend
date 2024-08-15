@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom/dist'
-import { userService } from '../services/user.service'
+import { userService } from '../services/user/user.service'
 import { useDispatch } from 'react-redux'
+import { SET_USER } from '../store/reducers/user.reducer'
 
 export function LoginSignup() {
   const dispatch = useDispatch()
@@ -12,7 +13,6 @@ export function LoginSignup() {
     password: '',
     fullname: '',
   })
-  const { username, password, fullname } = authDetails
 
   const isLogin = pathname.includes('login')
 
@@ -33,15 +33,19 @@ export function LoginSignup() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    const user = await isLogin ? userService.login(authDetails) : userService.signup(authDetails)
-    dispatch({ type: 'SET_USER', user })
+    const user = isLogin ? await userService.login(authDetails) : await userService.signup(authDetails)
+    setAuthDetails({ username: '', password: '', fullname: '' })
+
+    dispatch({ type: SET_USER, user })
   }
+
+  const { username, password, fullname } = authDetails
 
   return (
     <div className="login-signup-container">
       <div className="headers flex flex-row align-center">
         <h1>{isLogin ? 'Login' : 'Signup'}</h1>
-        
+
       </div>
       <form onSubmit={handleSubmit} className="flex flex-column">
         <input

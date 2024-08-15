@@ -1,3 +1,21 @@
+header.app-header .user{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+header.app-header .user button:hover {
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+header.app-header .user button {
+    background-color: rgb(221, 241, 255);
+    border-radius: 0.6em;
+    padding: 0.5em 0.7em;
+    border: 1px solid rgb(0, 140, 255);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
 header.app-header {
     padding-block: 1em;
     justify-content: center;

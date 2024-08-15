@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { toyService } from '../services/toy.service'
+import { toyService } from '../services/toy/toy.service'
 import { utilService } from '../services/util.service'
 
 export function ToyDetails() {

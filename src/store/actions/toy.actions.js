@@ -1,4 +1,4 @@
-import { toyService } from '../../services/toy.service'
+import { toyService } from '../../services/toy/toy.service'
 import { ADD_TOY, SET_LOADING, UPDATE_TOY } from '../reducers/toy.reducer'
 
 export async function loadToys() {
